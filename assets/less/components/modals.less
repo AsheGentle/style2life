@@ -1,0 +1,129 @@
+.overflow {
+    overflow: hidden;
+}
+
+.modal {
+    background-color: fade(#000, 45%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+    &.open {
+        .display-flex();
+        .main-axis-center();
+        .cross-axis-center();
+    }
+}
+
+.modal__content {
+    background-color: #fff;
+    position: relative;
+    max-height: 90%;
+    max-width: 90%;
+    width: 580px;
+
+    &.modal__small {
+        width: 450px;
+    }
+}
+
+.modal__close {
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 100;
+
+    svg {
+        fill: currentColor;
+        height: 16px;
+        width: 16px;        
+    }
+}
+
+.modal__body {
+    padding: 32px;
+    position: relative;
+}
+
+.modal__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.modal__title--border {
+    border-bottom: 1px solid #EBEBEB;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+}
+
+.login-tabs {
+    .display-flex();
+    .main-axis-between();
+    margin-bottom: 16px;
+}
+
+.login-tabs__item {
+    font-weight: 700;
+    
+    &:not(:last-child) {margin-right: 20px;}
+
+    &.active {color: @primary;}
+}
+
+.social-login {
+    border-top: 1px solid #EBEBEB;
+    margin-top: 32px;
+    padding-top: 24px;
+}
+
+.social-login__buttons {
+    .display-flex();
+    .row-wrap();
+    .main-axis-between();
+}
+
+.social-login__btn {
+    .display-flex();
+    .cross-axis-center();
+    border: 1px solid #2796FF;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 16px;
+    padding: 8px 16px;
+    width: 48%;
+    
+    svg {
+        fill: #fff;
+        height: 24px;
+        width: 24px;
+        margin-right: 16px;
+    }
+}
+
+.social-login__btn--vk {
+    background-color: #4D75A3;
+    border-color: #4D75A3;
+}
+
+.social-login__btn--fb {
+    background-color: #3B5998;
+    border-color: #3B5998;
+}
+
+.social-login__btn--google {
+    border-color: #2796FF;
+    color: #2796FF;
+}
+
+.social-login__btn--mail {
+    background-color: #005FF9;
+    border-color: #005FF9;
+}

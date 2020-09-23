@@ -1,0 +1,75 @@
+.btn-favorite {
+    .display-flex();
+    .main-axis-center();
+    .cross-axis-center();
+    background-color: #fff;
+    border: 1px solid #D2D2D2;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 50;
+
+    svg {
+        .flex(0,0,auto);
+        fill: #fff;
+        stroke: #959595;
+        height: 14px;
+        width: 14px;
+    }
+
+    &:hover, &.active {
+        border-color: @color-error;
+        svg {
+            fill: @color-error;
+            stroke: @color-error;
+        }
+    }
+}
+
+.btn-compare {
+    .display-flex();
+    .main-axis-center();
+    .cross-axis-center();
+    background-color: #fff;
+    border: 1px solid #D2D2D2;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 53px;
+    right: 12px;
+    z-index: 50;
+
+    svg {
+        .flex(0,0,auto);
+        fill: #fff;
+        stroke: #959595;
+        height: 14px;
+        width: 14px;
+    }
+
+    &:hover, &.active {
+        border-color: @color-error;
+        svg {
+            fill: @color-error;
+            stroke: @color-error;
+        }
+    }
+}
+
+.btn-compare--inline {
+    border: none;
+    width: auto;
+    
+    svg {
+        stroke: currentColor;
+        height: 24px;
+        width: 24px;
+        margin-right: 12px;
+    }
+}

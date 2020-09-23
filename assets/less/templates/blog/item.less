@@ -1,0 +1,105 @@
+.blog__description {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 48px;
+    max-width: 792px;    
+}
+
+.blog__image {
+    margin-bottom: 48px;
+    
+    img {max-width: 100%;}
+}
+
+.blog__title {
+    margin-bottom: 48px;
+
+    h1 {
+        font-size: 36px;
+        font-weight: 400;
+    }
+}
+
+.blog__text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.blog__meta {
+    .display-flex();
+    .cross-axis-center();
+}
+
+.blog__author {
+    border-right: 1px solid @dark;
+    margin-right: 12px;
+    padding-right: 12px;
+}
+
+.blog__date {
+    font-weight: 500;
+    margin-right: 16px;
+    text-transform: uppercase;
+}
+
+.blog__product {
+    .display-flex();
+    .cross-axis-center();
+    margin-bottom: 32px;
+}
+
+.blog__product-description {
+    margin-right: 52px;
+}
+
+.blog__product-title {
+    font-size: 36px;
+    margin-bottom: 24px;
+}
+
+.blog__product-text {
+    line-height: 1.4;
+    margin-bottom: 48px;
+}
+
+.blog__product-image {
+    .flex(0,0,auto);
+    position: relative;
+    
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    &:before {
+        background-image: url('@{images}/logo-sm.svg');
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -36px;
+        height: 92px;
+        width: 70px;
+    }
+}
+
+.blog__product--left {
+    .blog__product-description {
+        .flex-order(2);
+        margin-left: 52px;
+        margin-right: 0;
+    }
+
+    .blog__product-image:before {
+        left: auto;
+        right: -36px;
+    }
+}
+
+.blog__product--narrow {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 792px;
+    
+    .blog__product-image:before {display: none;}
+}
