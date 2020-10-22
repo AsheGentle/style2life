@@ -74,6 +74,29 @@
     .catalog-item {width: 33.333%;}
 }
 
+.catalog-list--action {
+    .display-flex();
+    .row-wrap();
+    margin-left: -16px;
+    margin-right: -16px;
+
+    .catalog-item {width: 16.667%;}
+    
+    .catalog-item__title {margin-bottom: 8px;}
+
+    .brand {
+        display: block;
+        margin-bottom: 8px;
+
+        &:after {display: none;}
+    }
+
+    .catalog-item__price {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+}
+
 .catalog-slider {
     position: relative;
 

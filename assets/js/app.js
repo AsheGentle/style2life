@@ -3,6 +3,10 @@ $(function(){
     $(".mobile-btn__menu").on("click", function(){
         $("body").toggleClass("open-menu");
     });
+    $(".mobile-menu__link").on("click", function(){
+        $(this).parents(".mobile-menu__item").toggleClass("open");
+    });
+    
 
     //mobile search
     $(".mobile-btn__search").on("click", function(){
@@ -15,6 +19,11 @@ $(function(){
     });
     $(".mobile-filter__close").on("click", function(){
         $("body").removeClass("open-filter");
+    });
+    
+    
+    $(".header-location__selected").on("click", function(){
+        $("body").toggleClass("open-location");
     });
 
     //close on body click
@@ -44,6 +53,15 @@ $(function(){
                     && !$(".mobile-btn__filter").is(e.target)
                     && div.has(e.target).length === 0) {
                 $("body").removeClass("open-filter");
+            }
+        }
+
+        if ($("body").hasClass("open-location")) {
+            var div = $(".header-location");
+            if (!div.is(e.target)
+                    && !$(".header-location__selected").is(e.target)
+                    && div.has(e.target).length === 0) {
+                $("body").removeClass("open-location");
             }
         }
     });
@@ -210,7 +228,7 @@ $(function(){
     }
 
     // show item info
-    $(".catalog-item__inner").on("click", function(e){
+    $(".catalog-list").on("click", ".catalog-item__inner", function(e){
         if ($(document).width() >= 1024) {
             e.preventDefault();
             

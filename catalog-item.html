@@ -23,10 +23,52 @@
         <header class="header">
             <div class="header-top">
                 <div class="container">
-                    <a href="" class="header-location">
-                        <svg><use href="assets/img/icons-location.svg#id"></use></svg>
-                        Санкт-Петербург
-                    </a>
+                    <div class="header-location">
+                        <div class="header-location__selected">
+                            <svg><use href="assets/img/icons-location.svg#id"></use></svg>
+                            Санкт-Петербург
+                        </div>
+                        <div class="header-location__dropdown">
+                            <div class="header-location__search">
+                                <div class="header-location__search-inner">
+                                    <svg><use href="assets/img/icons-search.svg#id"></use></svg>
+                                    <input type="text" placeholder="Поиск города" class="header-location__input">
+                                </div>
+                            </div>
+                            <div class="header-location__list">
+                                <div class="header-location__item active"><a href="">Москва</a></div>
+                                <div class="header-location__item"><a href="">Санкт-Петербург</a></div>
+                                <div class="header-location__item"><a href="">Абакан</a></div>
+                                <div class="header-location__item"><a href="">Анапа</a></div>
+                                <div class="header-location__item"><a href="">Архангельск</a></div>
+                                <div class="header-location__item"><a href="">Астрахань</a></div>
+                                <div class="header-location__item"><a href="">Барнаул</a></div>
+                                <div class="header-location__item"><a href="">Белгород</a></div>
+                                <div class="header-location__item"><a href="">Брянск</a></div>                                
+                                <div class="header-location__item"><a href="">Владивосток</a></div>                                
+                                <div class="header-location__item"><a href="">Владимир</a></div>                                
+                                <div class="header-location__item"><a href="">Волгоград</a></div>                                
+                                <div class="header-location__item"><a href="">Вологда</a></div>                                
+                                <div class="header-location__item"><a href="">Воронеж</a></div>                          
+                                <div class="header-location__item"><a href="">Геленджик</a></div>                          
+                                <div class="header-location__item"><a href="">Екатеринбург</a></div>
+                                <div class="header-location__item"><a href="">Абакан</a></div>
+                                <div class="header-location__item"><a href="">Анапа</a></div>
+                                <div class="header-location__item"><a href="">Архангельск</a></div>
+                                <div class="header-location__item"><a href="">Астрахань</a></div>
+                                <div class="header-location__item"><a href="">Барнаул</a></div>
+                                <div class="header-location__item"><a href="">Белгород</a></div>
+                                <div class="header-location__item"><a href="">Брянск</a></div>                                
+                                <div class="header-location__item"><a href="">Владивосток</a></div>                                
+                                <div class="header-location__item"><a href="">Владимир</a></div>                                
+                                <div class="header-location__item"><a href="">Волгоград</a></div>                                
+                                <div class="header-location__item"><a href="">Вологда</a></div>                                
+                                <div class="header-location__item"><a href="">Воронеж</a></div>                          
+                                <div class="header-location__item"><a href="">Геленджик</a></div>                          
+                                <div class="header-location__item"><a href="">Екатеринбург</a></div>
+                            </div>
+                        </div>
+                    </div>
                     <ul class="header-top__nav">
                         <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Бесплатная доставка</a></li>
                         <li class="header-top__nav-item active"><a href="" class="header-top__nav-link">Персональная скидка</a></li>
@@ -138,60 +180,71 @@
             </div>
 
             <div class="header-mobile">
+                <div class="mobile-nav">
+                    <a data-modal="#login" class="mobile-nav__link">
+                        <svg><use href="assets/img/icons-login.svg#id"></use></svg>
+                        <span>Войти</span>
+                    </a>
+                    <a href="" class="mobile-nav__link active">
+                        <svg><use href="assets/img/icons-registration.svg#id"></use></svg>
+                        <span>Регистрация</span>
+                    </a>
+                    <div class="mobile-btn__menu"></div>
+                </div>
                 <div class="header-mobile__scroll">
-                    <ul class="mobile-nav">
-                        <li class="mobile-nav__item active"><a href="" class="mobile-nav__link">Женщинам</a></li>
-                        <li class="mobile-nav__item"><a href="" class="mobile-nav__link">Мужчинам</a></li>
-                        <li class="mobile-nav__item"><a href="" class="mobile-nav__link">Детям</a></li>
-                    </ul>
                     <ul class="mobile-menu">
-                        <li class="mobile-menu__item active">
-                            <a href="" class="mobile-menu__link"><svg><use href="assets/img/icons-menu.svg#new"></use></svg> Новинки</a>
+                        <li class="mobile-menu__item">
+                            <span class="mobile-menu__link">Женщинам</span>
+                            <ul class="mobile-submenu">
+                                <li class="mobile-menu__item"><a href="">Новинки</a></li>
+                                <li class="mobile-menu__item"><a href="">Одежда</a></li>
+                                <li class="mobile-menu__item"><a href="">Образы</a></li>
+                                <li class="mobile-menu__item"><a href="">Аксессуары</a></li>
+                                <li class="mobile-menu__item"><a href="">Бренды</a></li>
+                                <li class="mobile-menu__item"><a href="">Premium</a></li>
+                            </ul>
                         </li>
                         <li class="mobile-menu__item">
-                            <a href="" class="mobile-menu__link"><svg><use href="assets/img/icons-menu.svg#clothes"></use></svg> Одежда</a>
+                            <span class="mobile-menu__link">Мужчинам</span>
+                            <ul class="mobile-submenu">
+                                <li class="mobile-menu__item"><a href="">Новинки</a></li>
+                                <li class="mobile-menu__item"><a href="">Одежда</a></li>
+                                <li class="mobile-menu__item"><a href="">Образы</a></li>
+                                <li class="mobile-menu__item"><a href="">Аксессуары</a></li>
+                                <li class="mobile-menu__item"><a href="">Бренды</a></li>
+                                <li class="mobile-menu__item"><a href="">Premium</a></li>
+                            </ul>
                         </li>
                         <li class="mobile-menu__item">
-                            <a href="" class="mobile-menu__link"><svg><use href="assets/img/icons-menu.svg#shoes"></use></svg> Обувь</a>
+                            <span class="mobile-menu__link">Детям</span>
+                            <ul class="mobile-submenu">
+                                <li class="mobile-menu__item"><a href="">Новинки</a></li>
+                                <li class="mobile-menu__item"><a href="">Одежда</a></li>
+                                <li class="mobile-menu__item"><a href="">Образы</a></li>
+                                <li class="mobile-menu__item"><a href="">Аксессуары</a></li>
+                                <li class="mobile-menu__item"><a href="">Бренды</a></li>
+                                <li class="mobile-menu__item"><a href="">Premium</a></li>
+                            </ul>
                         </li>
                         <li class="mobile-menu__item">
-                            <a href="" class="mobile-menu__link"><svg><use href="assets/img/icons-menu.svg#accessories"></use></svg> Аксессуары</a>
-                        </li>
-                        <li class="mobile-menu__item">
-                            <a href="" class="mobile-menu__link"><svg><use href="assets/img/icons-menu.svg#brands"></use></svg> Бренды</a>
-                        </li>
-                        <li class="mobile-menu__item">
-                            <a href="" class="mobile-menu__link"><svg><use href="assets/img/icons-menu.svg#premium"></use></svg> Premium</a>
-                        </li>
-                        <li class="mobile-menu__item">
-                            <a href="" class="mobile-menu__link"><svg><use href="assets/img/icons-menu.svg#sport"></use></svg> Спорт</a>
-                        </li>
-                        <li class="mobile-menu__item">
-                            <a href="" class="mobile-menu__link"><svg><use href="assets/img/icons-menu.svg#beauty"></use></svg> Красота</a>
-                        </li>
-                        <li class="mobile-menu__item">
-                            <a href="" class="mobile-menu__link"><svg><use href="assets/img/icons-menu.svg#home"></use></svg> Дом</a>
-                        </li>
-                        <li class="mobile-menu__item">
-                            <a href="" class="mobile-menu__link"><svg><use href="assets/img/icons-menu.svg#sale"></use></svg> Скидки</a>
+                            <span class="mobile-menu__link">Бренды</span>
+                            <ul class="mobile-submenu">
+                                <li class="mobile-menu__item"><a href="">Новинки</a></li>
+                                <li class="mobile-menu__item"><a href="">Одежда</a></li>
+                                <li class="mobile-menu__item"><a href="">Образы</a></li>
+                                <li class="mobile-menu__item"><a href="">Аксессуары</a></li>
+                                <li class="mobile-menu__item"><a href="">Бренды</a></li>
+                                <li class="mobile-menu__item"><a href="">Premium</a></li>
+                            </ul>
                         </li>
                     </ul>
-                    <div class="mobile-btn__block">
-                        <a data-modal="#login" class="btn btn--secondary btn--small btn--full">войти</a>
-                    </div>
                     <div class="mobile-link__block">
-                        <div class="mobile-link__item strong"><a href="">Статус заказа по номеру</a></div>
-                        <div class="mobile-link__item"><a href="">Центр поддержки Style2Life</a></div>
-                    </div>
-                    <div class="mobile-footer">
+                        <div class="mobile-link__item"><a href="">Статус заказа по номеру</a></div>
                         <div class="mobile-location">
-                            <div class="mobile-location__title">Ваш регион доставки:</div>
-                            <a href="" class="mobile-location__link">Санкт-Петербург</a>
+                            <span class="mobile-location__title">Регион доставки:</span>
+                            <a href="" class="mobile-location__link">Москва</a>
                         </div>
-                        <div class="mobile-location--country">
-                            <div class="location-country__name">Россия</div>
-                            <div class="location-country__flag"><img src="assets/img/lang-ru.png"></div>
-                        </div>
+                        <div class="mobile-link__item"><a href="">Клиентская служба <strong>Style2Life</strong></a></div>
                     </div>
                 </div>
             </div>
@@ -394,7 +447,46 @@
                                     <p>Выпрямитель Remington S5505 Pro Ceramic Ultra предназначен для быстрого и бережного создания гладких, прямых прядей. Стайлер снабжен удлиненными пластинами для лучшего захвата локонов. Рабочая поверхность имеет плавающую конструкцию с возможностью фиксации, благодаря чему обеспечивается равномерное давление на волосы без риска их повреждения. Модель удобно держать в ладони за счет корпуса, изготовленного из прочного пластика с антискользящим покрытием.</p>
                                     <p>Выпрямитель Remington S5505 Pro Ceramic Ultra функционирует в диапазоне от 150 до 230°C, в том числе за счет Heat Boost — программы быстрого нагрева до температурного максимума. Активация оптимального режима осуществляется при помощи кнопок на боковой панели устройства. Контролировать процесс работы можно за счет жидкокристаллического дисплея с яркой подсветкой и трех индикаторов. В комплекте поставки предусмотрена защелка-фиксатор и термостойкий чехол, которые обеспечивают безопасность, удобство в хранении и транспортировке стайлера. Надежная система защиты автоматически отключит выпрямитель после 60 минут эксплуатации.</p>
                                 </div>
-                                <div class="product__tabs-content" data-tab="product-char"></div>
+                                <div class="product__tabs-content" data-tab="product-char">
+                                    <div class="product__feature">
+                                        <div class="product__feature-item">
+                                            <div class="product__feature-name">Материал:</div>
+                                            <div class="product__feature-value">Искусственная кожа</div>
+                                        </div>
+                                        <div class="product__feature-item">
+                                            <div class="product__feature-name">Цвет:</div>
+                                            <div class="product__feature-value">Красный</div>
+                                        </div>
+                                        <div class="product__feature-item">
+                                            <div class="product__feature-name">Стиль:</div>
+                                            <div class="product__feature-value">Повседневный</div>
+                                        </div>
+                                        <div class="product__feature-item">
+                                            <div class="product__feature-name">Страна производитель:</div>
+                                            <div class="product__feature-value">Китай</div>
+                                        </div>
+                                        <div class="product__feature-item">
+                                            <div class="product__feature-name">Застежка:</div>
+                                            <div class="product__feature-value">Молния</div>
+                                        </div>
+                                        <div class="product__feature-item">
+                                            <div class="product__feature-name">Ширина:</div>
+                                            <div class="product__feature-value">13 см</div>
+                                        </div>
+                                        <div class="product__feature-item">
+                                            <div class="product__feature-name">Высота:</div>
+                                            <div class="product__feature-value">10 см</div>
+                                        </div>
+                                        <div class="product__feature-item">
+                                            <div class="product__feature-name">Цвет фурнитуры:</div>
+                                            <div class="product__feature-value">Золотая</div>
+                                        </div>
+                                        <div class="product__feature-item">
+                                            <div class="product__feature-name">Узор:</div>
+                                            <div class="product__feature-value">Однотонный</div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="product__tabs-content" data-tab="product-review"></div>
                                 <div class="product__tabs-content" data-tab="product-accessories"></div>
                                 <div class="product__tabs-content" data-tab="product-delivery"></div>

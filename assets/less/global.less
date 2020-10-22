@@ -20,9 +20,9 @@ body {
     margin: 0 auto;
 }
 
-.transition() {
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+.transition(@var: all 0.3s ease) {
+    -webkit-transition: @var;
+    transition: @var;
 }
 
 .clear() {
