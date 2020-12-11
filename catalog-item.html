@@ -72,14 +72,16 @@
                     <ul class="header-top__nav">
                         <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Бесплатная доставка</a></li>
                         <li class="header-top__nav-item active"><a href="" class="header-top__nav-link">Персональная скидка</a></li>
-                        <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Звонок с сайта</a></li>
-                        <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Упаковка</a></li>
-                        <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Подписаться</a></li>
+                        <li class="header-top__nav-item"><a data-modal="#callback" class="header-top__nav-link">Заказать звонок</a></li>
                     </ul>
                     <a href class="header-address">
                         <svg><use href="assets/img/icons-map.svg#id"></use></svg>
                         Адреса магазинов
                     </a>
+                    <div class="header-phone">
+                        <a href="tel:88000000000" class="header-phone__item">8 800 000 00 00</a>
+                        <a href="tel:+79876543210" class="header-phone__item">+7 (987) 654 32 10</a>
+                    </div>
                 </div>
             </div>
             <div class="header-middle">
@@ -138,7 +140,6 @@
                                         <div class="cart__desc">
                                             <div class="cart__title">Nike</div>
                                             <div class="cart__category">Шорты спортивные</div>
-                                            <div class="cart__availy">Нет на складе</div>
                                         </div>
                                         <div class="cart__price price">
                                             <div class="price--old">2 500</div>
@@ -394,7 +395,7 @@
                                     <svg><use href="assets/img/icons-cart.svg#id"></use></svg>
                                     <span>Купить со скидкой 30%</span>
                                 </a>
-                                <a class="btn btn--icon btn--full">
+                                <a data-modal="#oneclick" class="btn btn--icon btn--full">
                                     <svg><use href="assets/img/icons-cart.svg#id"></use></svg>
                                     <span>Купить в один клик</span>
                                 </a>
@@ -436,14 +437,14 @@
                             </div>
                             <div class="product__tabs">
                                 <div class="product__tabs-nav">
-                                    <div class="product__tabs-item active" data-tab="product-desc">Обзор</div>
+                                    <div class="product__tabs-item" data-tab="product-desc">Обзор</div>
                                     <div class="product__tabs-item" data-tab="product-char">Характеристики</div>
                                     <div class="product__tabs-item" data-tab="product-review">Отзывы</div>
-                                    <div class="product__tabs-item" data-tab="product-accessories">Аксессуары</div>
+                                    <div class="product__tabs-item active" data-tab="product-accessories">Аксессуары</div>
                                     <div class="product__tabs-item" data-tab="product-delivery">Доставка и оплата</div>
                                     <div class="product__tabs-item" data-tab="product-garanty">Гарантия</div>
                                 </div>
-                                <div class="product__tabs-content active" data-tab="product-desc">
+                                <div class="product__tabs-content" data-tab="product-desc">
                                     <p>Выпрямитель Remington S5505 Pro Ceramic Ultra предназначен для быстрого и бережного создания гладких, прямых прядей. Стайлер снабжен удлиненными пластинами для лучшего захвата локонов. Рабочая поверхность имеет плавающую конструкцию с возможностью фиксации, благодаря чему обеспечивается равномерное давление на волосы без риска их повреждения. Модель удобно держать в ладони за счет корпуса, изготовленного из прочного пластика с антискользящим покрытием.</p>
                                     <p>Выпрямитель Remington S5505 Pro Ceramic Ultra функционирует в диапазоне от 150 до 230°C, в том числе за счет Heat Boost — программы быстрого нагрева до температурного максимума. Активация оптимального режима осуществляется при помощи кнопок на боковой панели устройства. Контролировать процесс работы можно за счет жидкокристаллического дисплея с яркой подсветкой и трех индикаторов. В комплекте поставки предусмотрена защелка-фиксатор и термостойкий чехол, которые обеспечивают безопасность, удобство в хранении и транспортировке стайлера. Надежная система защиты автоматически отключит выпрямитель после 60 минут эксплуатации.</p>
                                 </div>
@@ -487,99 +488,434 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product__tabs-content" data-tab="product-review"></div>
-                                <div class="product__tabs-content" data-tab="product-accessories"></div>
-                                <div class="product__tabs-content" data-tab="product-delivery"></div>
-                                <div class="product__tabs-content" data-tab="product-garanty"></div>
-                            </div>
-                            <div class="product__slider">
-                                <div class="title-border-right">
-                                    <h2>Вам могут понравиться</h2>
+                                <div class="product__tabs-content" data-tab="product-review">
+                                    <div class="product-review__buttons">
+                                        <div class="product-review__sort">
+                                            <div class="product-review__sort-title">Сортировать:</div>
+                                            <div class="product-review__sort-list">
+                                                <div class="product-review__sort-item active">По пользе</div>
+                                                <div class="product-review__sort-item">По дате добавления</div>
+                                            </div>
+                                        </div>
+                                        <a data-modal="#addreview" class="btn btn--secondary btn--border btn--small">Добавить отзыв</a>                                        
+                                    </div>
+                                    <div class="product-review__list">
+                                        <div class="product-review__item">
+                                            <div class="product-review__info">
+                                                <div class="product-review__name">Марина</div>
+                                                <div class="product-review__place">Ангарск</div>
+                                                <div class="product-review__time">20.01.2020<br> 14:53:45</div>
+                                            </div>
+                                            <div class="product-review__description">
+                                                <div class="rating">
+                                                    <div class="rating__stars" title="3">
+                                                        <div class="rating__value" style="width: 60%;"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-review__text">Отличный телефон, хорошее разрешение экрана, яркие цвета, все необходимое имеется, купила дочери, она в восторге, в руке держать удобно, батарея заряд держит хорошо, отпечаток пальца, распознование по лицу, оплата через pay, в комплекте зарядник и наушники.</div>
+                                                <div class="product-review__meta">
+                                                    <div class="product-review__uses">
+                                                        <span>Отзыв полезен? </span>
+                                                        <button class="product-review__uses-btn">Да</button>
+                                                        <button class="product-review__uses-btn">Нет</button>
+                                                    </div>
+                                                    <div class="product-review__count">168 человек считают этот отзыв полезным</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-review__item">
+                                            <div class="product-review__info">
+                                                <div class="product-review__name">Марина</div>
+                                                <div class="product-review__place">Ангарск</div>
+                                                <div class="product-review__time">20.01.2020<br> 14:53:45</div>
+                                            </div>
+                                            <div class="product-review__description">
+                                                <div class="rating">
+                                                    <div class="rating__stars" title="3">
+                                                        <div class="rating__value" style="width: 60%;"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-review__text">Отличный телефон, хорошее разрешение экрана, яркие цвета, все необходимое имеется, купила дочери, она в восторге, в руке держать удобно, батарея заряд держит хорошо, отпечаток пальца, распознование по лицу, оплата через pay, в комплекте зарядник и наушники.</div>
+                                                <div class="product-review__meta">
+                                                    <div class="product-review__uses">
+                                                        <span>Отзыв полезен? </span>
+                                                        <button class="product-review__uses-btn">Да</button>
+                                                        <button class="product-review__uses-btn">Нет</button>
+                                                    </div>
+                                                    <div class="product-review__count">168 человек считают этот отзыв полезным</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-review__item">
+                                            <div class="product-review__info">
+                                                <div class="product-review__name">Марина</div>
+                                                <div class="product-review__place">Ангарск</div>
+                                                <div class="product-review__time">20.01.2020<br> 14:53:45</div>
+                                            </div>
+                                            <div class="product-review__description">
+                                                <div class="rating">
+                                                    <div class="rating__stars" title="3">
+                                                        <div class="rating__value" style="width: 60%;"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-review__text">Отличный телефон, хорошее разрешение экрана, яркие цвета, все необходимое имеется, купила дочери, она в восторге, в руке держать удобно, батарея заряд держит хорошо, отпечаток пальца, распознование по лицу, оплата через pay, в комплекте зарядник и наушники.</div>
+                                                <div class="product-review__meta">
+                                                    <div class="product-review__uses">
+                                                        <span>Отзыв полезен? </span>
+                                                        <button class="product-review__uses-btn">Да</button>
+                                                        <button class="product-review__uses-btn">Нет</button>
+                                                    </div>
+                                                    <div class="product-review__count">168 человек считают этот отзыв полезным</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-review__item">
+                                            <div class="product-review__info">
+                                                <div class="product-review__name">Марина</div>
+                                                <div class="product-review__place">Ангарск</div>
+                                                <div class="product-review__time">20.01.2020<br> 14:53:45</div>
+                                            </div>
+                                            <div class="product-review__description">
+                                                <div class="rating">
+                                                    <div class="rating__stars" title="3">
+                                                        <div class="rating__value" style="width: 60%;"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-review__text">Отличный телефон, хорошее разрешение экрана, яркие цвета, все необходимое имеется, купила дочери, она в восторге, в руке держать удобно, батарея заряд держит хорошо, отпечаток пальца, распознование по лицу, оплата через pay, в комплекте зарядник и наушники.</div>
+                                                <div class="product-review__meta">
+                                                    <div class="product-review__uses">
+                                                        <span>Отзыв полезен? </span>
+                                                        <button class="product-review__uses-btn">Да</button>
+                                                        <button class="product-review__uses-btn">Нет</button>
+                                                    </div>
+                                                    <div class="product-review__count">168 человек считают этот отзыв полезным</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pagination">
+                                        <a href="" class="pagination__arrow pagination__arrow--left"><svg><use href="assets/img/icons-arrow.svg#left-long"></use></svg></a>
+                                        <a href="" class="pagination__page">1</a>
+                                        <a href="" class="pagination__page">2</a>
+                                        <a href="" class="pagination__page active">3</a>
+                                        <a href="" class="pagination__page">4</a>
+                                        <a href="" class="pagination__page">5</a>
+                                        <a href="" class="pagination__arrow pagination__arrow--right"><svg><use href="assets/img/icons-arrow.svg#right-long"></use></svg></a>
+                                    </div>
+                                    <div class="pagination-mobile">
+                                        <a href="" class="btn btn--border btn--icon btn--small"><span>Читать все отзывы</span><svg><use href="assets/img/icons-arrow-right.svg#id"></use></svg></a>
+                                    </div>
                                 </div>
-                                <div class="catalog-slider catalog-slider-min">
-                                    <div class="catalog-item">
-                                        <a href="" class="catalog-item__inner">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/sample/product-1.png">
-                                                <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
+                                <div class="product__tabs-content active" data-tab="product-accessories">
+                                    <div class="sorting-row">
+                                        <div class="catalog-sort">
+                                            <div class="catalog-sort__title">Сортировать:</div>
+                                            <div class="catalog-sort__list">
+                                                <div class="catalog-sort__item active">По популярности</div>
+                                                <div class="catalog-sort__item">По цене</div>
+                                                <div class="catalog-sort__item">По рейтингу</div>
+                                                <div class="catalog-sort__item">По отзывам</div>
+                                                <div class="catalog-sort__item">По размеру скидки</div>
                                             </div>
-                                            <div class="catalog-item__title">
-                                                <span class="brand">Nike</span> Шорты спортивные
-                                            </div>
-                                            <div class="catalog-item__price price">1 990 руб.</div>
-                                        </a>                            
+                                        </div>
                                     </div>
-                                    <div class="catalog-item">
-                                        <a href="" class="catalog-item__inner">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/sample/product-1.png">
-                                                <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
+                                    <div class="catalog-wrap">
+                                        <aside class="filter">
+                                            <div class="filter-block">
+                                                <div class="filter-block__nav">
+                                                    <div class="filter-block__link">
+                                                        <div class="filter-block__name"><a href="">Популярные</a> <span class="filter-block__count">16</span></div>
+                                                    </div>
+                                                    <div class="filter-block__link">
+                                                        <div class="filter-block__name"><a href="">Чехлы для телефонов</a> <span class="filter-block__count">16</span></div>
+                                                    </div>
+                                                    <div class="filter-block__link">
+                                                        <div class="filter-block__name"><a href="">Дата-кабели</a> <span class="filter-block__count">16</span></div>
+                                                    </div>
+                                                    <div class="filter-block__link">
+                                                        <div class="filter-block__name"><a href="">Наушники</a> <span class="filter-block__count">16</span></div>
+                                                    </div>
+                                                    <div class="filter-block__link">
+                                                        <div class="filter-block__name"><a href="">Автомобильные зарядные устройства</a> <span class="filter-block__count">16</span></div>
+                                                    </div>
+                                                    <div class="filter-block__link">
+                                                        <div class="filter-block__name"><a href="">Кабели и переходники для аудио</a> <span class="filter-block__count">16</span></div>
+                                                    </div>
+                                                    <div class="filter-block__link">
+                                                        <div class="filter-block__name"><a href="">Портативная акустика</a> <span class="filter-block__count">16</span></div>
+                                                    </div>
+                                                    <div class="filter-block__link">
+                                                        <div class="filter-block__name"><a href="">Батарейки</a> <span class="filter-block__count">16</span></div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__title">
-                                                <span class="brand">Nike</span> Шорты спортивные
+                                            <div class="filter-block open">
+                                                <div class="filter-block__title">Цена</div>
+                                                <div class="filter-block__list">
+                                                    <div class="filter-block__item form-item__row">
+                                                        <input type="text" class="inputbox" placeholder="От 500">
+                                                        <input type="text" class="inputbox" placeholder="До 5 000 ">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="catalog-item__price price">1 990 руб.</div>
-                                        </a>                            
+                                            <div class="filter-block open">
+                                                <div class="filter-block__title">Производители</div>
+                                                <div class="filter-block__list">
+                                                    <div class="filter-block__item">
+                                                        <label class="check">
+                                                            <input type="checkbox">
+                                                            <span class="check__label">LG</span>
+                                                        </label>
+                                                        <span class="filter-block__count">211</span>
+                                                    </div>
+                                                    <div class="filter-block__item">
+                                                        <label class="check">
+                                                            <input type="checkbox">
+                                                            <span class="check__label">Samsung</span>
+                                                        </label>
+                                                        <span class="filter-block__count">211</span>
+                                                    </div>
+                                                    <div class="filter-block__item">
+                                                        <label class="check">
+                                                            <input type="checkbox">
+                                                            <span class="check__label">Sony</span>
+                                                        </label>
+                                                        <span class="filter-block__count">211</span>
+                                                    </div>
+                                                    <div class="filter-block__item">
+                                                        <label class="check">
+                                                            <input type="checkbox">
+                                                            <span class="check__label">BBK</span>
+                                                        </label>
+                                                        <span class="filter-block__count">211</span>
+                                                    </div>
+                                                    <div class="filter-block__item">
+                                                        <label class="check">
+                                                            <input type="checkbox">
+                                                            <span class="check__label">Erisson</span>
+                                                        </label>
+                                                        <span class="filter-block__count">211</span>
+                                                    </div>
+                                                    <div class="filter-block__item">
+                                                        <label class="check">
+                                                            <input type="checkbox">
+                                                            <span class="check__label">Phillips</span>
+                                                        </label>
+                                                        <span class="filter-block__count">211</span>
+                                                    </div>
+                                                    <div class="filter-block__more">Показать еще</div>
+                                                </div>
+                                            </div>
+                                        </aside>
+                                        <div class="catalog-list">
+                                            <div class="catalog-item">
+                                                <a href="" class="catalog-item__inner">
+                                                    <div class="catalog-item__image">
+                                                        <img src="assets/img/sample/product-1.png">
+                                                        <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
+                                                        <div class="btn-compare"><svg><use href="assets/img/icons-compare.svg#id"></use></svg></div>
+                                                        <div class="catalog-item__tags">
+                                                            <div class="catalog-item__tag catalog-item__tag--sale">- 25%</div>
+                                                            <div class="catalog-item__tag catalog-item__tag--new">new</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="catalog-item__price price">1 990 руб.</div>
+                                                    <div class="catalog-item__title">
+                                                        <span class="brand">Nike</span> Шорты спортивные
+                                                    </div>
+                                                    <div class="catalog-item__btn">
+                                                        <div class="btn btn--border btn--icon btn--full">
+                                                            <svg><use href="assets/img/icons-cart.svg#id"></use></svg>
+                                                            <span>Добавить в корзину</span>
+                                                        </div>
+                                                    </div>
+                                                </a>                            
+                                            </div>
+                                            <div class="catalog-item">
+                                                <a href="" class="catalog-item__inner">
+                                                    <div class="catalog-item__image">
+                                                        <img src="assets/img/sample/product-1.png">
+                                                        <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
+                                                        <div class="btn-compare"><svg><use href="assets/img/icons-compare.svg#id"></use></svg></div>
+                                                        <div class="catalog-item__tags">
+                                                            <div class="catalog-item__tag catalog-item__tag--sale">- 25%</div>
+                                                            <div class="catalog-item__tag catalog-item__tag--new">new</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="catalog-item__price price">1 990 руб.</div>
+                                                    <div class="catalog-item__title">
+                                                        <span class="brand">Nike</span> Шорты спортивные
+                                                    </div>
+                                                    <div class="catalog-item__btn">
+                                                        <div class="btn btn--border btn--icon btn--full">
+                                                            <svg><use href="assets/img/icons-cart.svg#id"></use></svg>
+                                                            <span>Добавить в корзину</span>
+                                                        </div>
+                                                    </div>
+                                                </a>                            
+                                            </div>
+                                            <div class="catalog-item">
+                                                <a href="" class="catalog-item__inner">
+                                                    <div class="catalog-item__image">
+                                                        <img src="assets/img/sample/product-1.png">
+                                                        <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
+                                                        <div class="btn-compare"><svg><use href="assets/img/icons-compare.svg#id"></use></svg></div>
+                                                        <div class="catalog-item__tags">
+                                                            <div class="catalog-item__tag catalog-item__tag--sale">- 25%</div>
+                                                            <div class="catalog-item__tag catalog-item__tag--new">new</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="catalog-item__price price">1 990 руб.</div>
+                                                    <div class="catalog-item__title">
+                                                        <span class="brand">Nike</span> Шорты спортивные
+                                                    </div>
+                                                    <div class="catalog-item__btn">
+                                                        <div class="btn btn--border btn--icon btn--full">
+                                                            <svg><use href="assets/img/icons-cart.svg#id"></use></svg>
+                                                            <span>Добавить в корзину</span>
+                                                        </div>
+                                                    </div>
+                                                </a>                            
+                                            </div>
+                                            <div class="catalog-item">
+                                                <a href="" class="catalog-item__inner">
+                                                    <div class="catalog-item__image">
+                                                        <img src="assets/img/sample/product-1.png">
+                                                        <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
+                                                        <div class="btn-compare"><svg><use href="assets/img/icons-compare.svg#id"></use></svg></div>
+                                                        <div class="catalog-item__tags">
+                                                            <div class="catalog-item__tag catalog-item__tag--sale">- 25%</div>
+                                                            <div class="catalog-item__tag catalog-item__tag--new">new</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="catalog-item__price price">1 990 руб.</div>
+                                                    <div class="catalog-item__title">
+                                                        <span class="brand">Nike</span> Шорты спортивные
+                                                    </div>
+                                                    <div class="catalog-item__btn">
+                                                        <div class="btn btn--border btn--icon btn--full">
+                                                            <svg><use href="assets/img/icons-cart.svg#id"></use></svg>
+                                                            <span>Добавить в корзину</span>
+                                                        </div>
+                                                    </div>
+                                                </a>                            
+                                            </div>
+                                            <div class="catalog-item">
+                                                <a href="" class="catalog-item__inner">
+                                                    <div class="catalog-item__image">
+                                                        <img src="assets/img/sample/product-1.png">
+                                                        <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
+                                                        <div class="btn-compare"><svg><use href="assets/img/icons-compare.svg#id"></use></svg></div>
+                                                        <div class="catalog-item__tags">
+                                                            <div class="catalog-item__tag catalog-item__tag--sale">- 25%</div>
+                                                            <div class="catalog-item__tag catalog-item__tag--new">new</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="catalog-item__price price">1 990 руб.</div>
+                                                    <div class="catalog-item__title">
+                                                        <span class="brand">Nike</span> Шорты спортивные
+                                                    </div>
+                                                    <div class="catalog-item__btn">
+                                                        <div class="btn btn--border btn--icon btn--full">
+                                                            <svg><use href="assets/img/icons-cart.svg#id"></use></svg>
+                                                            <span>Добавить в корзину</span>
+                                                        </div>
+                                                    </div>
+                                                </a>                            
+                                            </div>
+                                            <div class="catalog-item">
+                                                <a href="" class="catalog-item__inner">
+                                                    <div class="catalog-item__image">
+                                                        <img src="assets/img/sample/product-1.png">
+                                                        <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
+                                                        <div class="btn-compare"><svg><use href="assets/img/icons-compare.svg#id"></use></svg></div>
+                                                        <div class="catalog-item__tags">
+                                                            <div class="catalog-item__tag catalog-item__tag--sale">- 25%</div>
+                                                            <div class="catalog-item__tag catalog-item__tag--new">new</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="catalog-item__price price">1 990 руб.</div>
+                                                    <div class="catalog-item__title">
+                                                        <span class="brand">Nike</span> Шорты спортивные
+                                                    </div>
+                                                    <div class="catalog-item__btn">
+                                                        <div class="btn btn--border btn--icon btn--full">
+                                                            <svg><use href="assets/img/icons-cart.svg#id"></use></svg>
+                                                            <span>Добавить в корзину</span>
+                                                        </div>
+                                                    </div>
+                                                </a>                            
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="catalog-item">
-                                        <a href="" class="catalog-item__inner">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/sample/product-1.png">
-                                                <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
-                                            </div>
-                                            <div class="catalog-item__title">
-                                                <span class="brand">Nike</span> Шорты спортивные
-                                            </div>
-                                            <div class="catalog-item__price price">1 990 руб.</div>
-                                        </a>                            
+                                    <div class="pagination">
+                                        <a href="" class="pagination__arrow pagination__arrow--left"><svg><use href="assets/img/icons-arrow.svg#left-long"></use></svg></a>
+                                        <a href="" class="pagination__page">1</a>
+                                        <a href="" class="pagination__page">2</a>
+                                        <a href="" class="pagination__page active">3</a>
+                                        <a href="" class="pagination__page">4</a>
+                                        <a href="" class="pagination__page">5</a>
+                                        <a href="" class="pagination__arrow pagination__arrow--right"><svg><use href="assets/img/icons-arrow.svg#right-long"></use></svg></a>
                                     </div>
-                                    <div class="catalog-item">
-                                        <a href="" class="catalog-item__inner">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/sample/product-1.png">
-                                                <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
-                                            </div>
-                                            <div class="catalog-item__title">
-                                                <span class="brand">Nike</span> Шорты спортивные
-                                            </div>
-                                            <div class="catalog-item__price price">1 990 руб.</div>
-                                        </a>                            
+                                </div>
+                                <div class="product__tabs-content" data-tab="product-delivery">
+                                    <div class="product-delivery">
+                                        <h3>Доставка матраса Ортомакс Sale 19 S500 по Москве</h3>
+                                        <h4>Сроки и стоимость:</h4>
+                                        <ul>
+                                            <li>1 день;</li>
+                                            <li>бесплатно;</li>
+                                            <li>за пределами зоны МКАД+5 км — 1 км + 30 ₽.</li>
+                                        </ul>
+                                        <h4>Бесплатный самовывоз от любой суммы заказа</h4>
+                                        <ul>
+                                            <li><a href="">Москва, Огородный проезд, д. 10</a> — фирменный салон*</li>
+                                            <li><a href="">Москва, Шоссе Энтузиастов, д. 50</a> — фирменный салон*</li>
+                                            <li><a href="">Москва, Шелепихинская набережная, д. 16</a> — фирменный салон*</li>
+                                            <li><a href="">Москва, ул. Обручева, д. 34/63, стр. 1</a> — фирменный салон*</li>
+                                            <li><a href="">МО, п. Апаринки, проектируемый проезд 5208, вл. 10 (Северная Видновская промзона, к. 48)</a></li>
+                                        </ul>
+                                        <p><strong>*самовывоз только при 100% предоплате</strong></p>
+                                        <a href="" class="product-delivery__btn"><span>Ознакомиться с полными условиями доставки</span> <svg><use href="assets/img/icons-arrow-right.svg#id"></use></svg></a>
+                                        <h4>Способы оплаты:</h4>
+                                        <ul>
+                                            <li>картой — при получении товара, заказе на сайте или в фирменном салоне, без комиссий</li>
+                                            <li>наличными — при получении товара или в фирменном салоне</li>
+                                            <li>выставление счета — для юр.лиц</li>
+                                        </ul>
                                     </div>
-                                    <div class="catalog-item">
-                                        <a href="" class="catalog-item__inner">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/sample/product-1.png">
-                                                <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
-                                            </div>
-                                            <div class="catalog-item__title">
-                                                <span class="brand">Nike</span> Шорты спортивные
-                                            </div>
-                                            <div class="catalog-item__price price">1 990 руб.</div>
-                                        </a>                            
-                                    </div>
-                                    <div class="catalog-item">
-                                        <a href="" class="catalog-item__inner">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/sample/product-1.png">
-                                                <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
-                                            </div>
-                                            <div class="catalog-item__title">
-                                                <span class="brand">Nike</span> Шорты спортивные
-                                            </div>
-                                            <div class="catalog-item__price price">1 990 руб.</div>
-                                        </a>                            
-                                    </div>
-                                    <div class="catalog-item">
-                                        <a href="" class="catalog-item__inner">
-                                            <div class="catalog-item__image">
-                                                <img src="assets/img/sample/product-1.png">
-                                                <div class="btn-favorite"><svg><use href="assets/img/icons-heart.svg#id"></use></svg></div>
-                                            </div>
-                                            <div class="catalog-item__title">
-                                                <span class="brand">Nike</span> Шорты спортивные
-                                            </div>
-                                            <div class="catalog-item__price price">1 990 руб.</div>
-                                        </a>                            
+                                </div>
+                                <div class="product__tabs-content" data-tab="product-garanty">
+                                    <div class="product-certificate">
+                                        <h3>Гарантия качества</h3>
+                                        <p>Вся наша продукция сертифицирована, поэтому мы уверены в её качестве и даём гарантии</p>
+                                        <h4>Сертификаты и лицензии</h4>
+                                        <div class="sertificates">
+                                            <a href="assets/img/sample/sert-1.png" class="sertificates__item" data-fancybox="sertificates">
+                                                <img src="assets/img/sample/sert-1.png">
+                                                <div class="sertificates__name">Сертификация швейных изделий</div>
+                                            </a>
+                                            <a href="assets/img/sample/sert-1.png" class="sertificates__item" data-fancybox="sertificates">
+                                                <img src="assets/img/sample/sert-1.png">
+                                                <div class="sertificates__name">Сертификация швейных изделий</div>
+                                            </a>
+                                            <a href="assets/img/sample/sert-1.png" class="sertificates__item" data-fancybox="sertificates">
+                                                <img src="assets/img/sample/sert-1.png">
+                                                <div class="sertificates__name">Сертификация швейных изделий</div>
+                                            </a>
+                                            <a href="assets/img/sample/sert-1.png" class="sertificates__item" data-fancybox="sertificates">
+                                                <img src="assets/img/sample/sert-1.png">
+                                                <div class="sertificates__name">Сертификация швейных изделий</div>
+                                            </a>
+                                            <a href="assets/img/sample/sert-1.png" class="sertificates__item" data-fancybox="sertificates">
+                                                <img src="assets/img/sample/sert-1.png">
+                                                <div class="sertificates__name">Сертификация швейных изделий</div>
+                                            </a>
+                                            <a href="assets/img/sample/sert-1.png" class="sertificates__item" data-fancybox="sertificates">
+                                                <img src="assets/img/sample/sert-1.png">
+                                                <div class="sertificates__name">Сертификация швейных изделий</div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -587,7 +923,7 @@
                                 <div class="title-border-right">
                                     <h2>Похожие товары</h2>
                                 </div>
-                                <div class="catalog-slider catalog-slider-min">
+                                <div class="catalog-slider catalog-slider-full">
                                     <div class="catalog-item">
                                         <a href="" class="catalog-item__inner">
                                             <div class="catalog-item__image">
@@ -694,7 +1030,7 @@
                                 <div class="title-border-right">
                                     <h2>Другие товары</h2>
                                 </div>
-                                <div class="catalog-slider catalog-slider-min">
+                                <div class="catalog-slider catalog-slider-full">
                                     <div class="catalog-item">
                                         <a href="" class="catalog-item__inner">
                                             <div class="catalog-item__image">
@@ -901,7 +1237,7 @@
                     <div class="modal__title">Подписаться на уведомление</div>
                     <label class="check">
                         <input type="checkbox" checked>
-                        <span class="check__label">Подписаться на уведовления о товаре</span>
+                        <span class="check__label">Подписаться на уведомления о товаре</span>
                     </label>
                     <div class="form-notify">
                         <div class="form-notify__text">Мы обязательно напишем вам, когда товар появится в наличии</div>
@@ -914,9 +1250,102 @@
             </div>
         </div>
 
+        <div class="modal" id="oneclick">
+            <div class="modal__content modal__xs">
+                <div class="modal__close"><svg><use href="assets/img/icons-close.svg#id"></use></svg></div>
+                <div class="modal__body">
+                    <div class="modal__logo"><img src="assets/img/logo.svg"></div>
+                    <div class="modal__title modal__title--border">Купить в один клик</div>
+                    <form class="validate">
+                        <div class="form-item form-item--margin-s">
+                            <div class="form-item__input">
+                                <input type="text" class="inputbox" placeholder="Ваше имя" name="name">
+                            </div>
+                        </div>
+                        <div class="form-item form-item--margin-s">
+                            <div class="form-item__input">
+                                <input type="text" class="inputbox required" placeholder="Телефон" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-item form-item--margin-s">
+                            <div class="form-item__input">
+                                <input type="email" class="inputbox" placeholder="Email" name="email">
+                            </div>
+                        </div>
+                        <div class="btn-line form-item--margin-s">
+                            <input type="submit" value="Купить!" class="btn btn--secondary btn--small btn--full">
+                        </div>
+                        <div class="form-agree">
+                            Нажимая на кнопку “Купить!”, я даю свое согласие на обработку персональных данных и принимаю условие соглашения
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="addreview">
+            <div class="modal__content modal__small">
+                <div class="modal__close"><svg><use href="assets/img/icons-close.svg#id"></use></svg></div>
+                <div class="modal__body">
+                    <div class="modal__logo"><img src="assets/img/logo.svg"></div>
+                    <div class="modal__product">David Jones</div>
+                    <div class="modal__title modal__title--border modal__title--rating">
+                        Оцените товар
+                        <div class="set-rating">
+                            <input id="rating-5" name="rating" type="radio" value="5">
+                            <label for="rating-5">5</label>
+                            <input id="rating-4" name="rating" type="radio" value="4">
+                            <label for="rating-4">4</label>
+                            <input id="rating-3" name="rating" type="radio" value="3">
+                            <label for="rating-3">3</label>
+                            <input id="rating-2" name="rating" type="radio" value="2">
+                            <label for="rating-2">2</label>
+                            <input id="rating-1" name="rating" type="radio" value="1">
+                            <label for="rating-1">1</label>
+                        </div>
+                    </div>
+                    <form class="validate">
+                        <div class="form-item form-item--margin-s">
+                            <div class="form-item__input">
+                                <input type="text" class="inputbox" placeholder="Номер заказ" name="order">
+                            </div>
+                        </div>
+                        <div class="form-item form-item--margin-s">
+                            <div class="form-item__input">
+                                <input type="text" class="inputbox" placeholder="Ваше имя" name="name">
+                            </div>
+                        </div>
+                        <div class="form-item form-item--margin-s">
+                            <div class="form-item__input">
+                                <input type="text" class="inputbox required" placeholder="Телефон" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-item form-item--margin-s">
+                            <div class="form-item__input">
+                                <input type="email" class="inputbox" placeholder="Email" name="email">
+                            </div>
+                        </div>
+                        <div class="form-item form-item--margin-s">
+                            <div class="form-item__input">
+                                <textarea class="inputbox" placeholder="Оставить свой отзыв"></textarea>
+                            </div>
+                        </div>
+                        <div class="btn-line form-item--margin-s">
+                            <input type="submit" value="Оставить отзыв" class="btn btn--secondary btn--small btn--full">
+                        </div>
+                        <div class="form-agree">
+                            Нажимая на кнопку “Оставить отзыв”, я даю свое согласие на обработку персональных данных и принимаю условие соглашения
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <script type="text/javascript" src="assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/slick.min.js"></script>
         <script type="text/javascript" src="assets/js/selectize.min.js"></script>
+        <script type="text/javascript" src="assets/js/fancybox.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="assets/js/app.js"></script>
     </body>
 </html>
