@@ -2419,6 +2419,15 @@ main {
 .footer-subscription__form .btn {
   width: 100%;
 }
+.footer-subscription__success {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  color: #924CD5;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
 .blog-intro {
   display: grid;
   grid-template-columns: 480px 1fr;
@@ -8773,6 +8782,9 @@ textarea.add-code__textarea {
     height: 48px;
     width: 48px;
     background-size: 60%;
+  }
+  .footer-subscription__success {
+    font-size: 16px;
   }
 }
 @media all and (max-width: 500px) {
