@@ -10,8 +10,8 @@
 
 .staff-aside {
     .flex(0,0,auto);
-    margin-right: 90px;
-    width: 110px;
+    margin-right: 32px;
+    width: 175px;
 }
 
 .staff-info {
@@ -41,20 +41,60 @@
     .display-flex();
     .cross-axis-start();
     padding: 32px 24px;
+    position: relative;
     .transition();
-    
+
     &:hover {background-color: @bg;}
 }
 
 .staff__image {
+    margin-top: 18px;
+    margin-left: 18px;
+    margin-right: 52px;
+    position: relative;
+
+    &::before {
+        background-image: url('@{images}/logo-sm.svg');
+        background-size: 100%;
+        content: '';
+        position: absolute;
+        bottom: -22px;
+        left: 14px;
+        height: 53px;
+        width: 40px;
+        z-index: 20;
+    }
+}
+
+.staff__image-inner {
     .flex(0,0,auto);
-    margin-right: 32px;
+    border-radius: 25px;
+    height: 140px;
+    width: 140px;
+    overflow: hidden;
+    position: relative;
+    .transform(rotate(15deg));
+
+    img {
+        min-height: 100%;
+        min-width: 100%;
+        max-width: 120%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 10;
+        .transform(translate(-50%, -50%) rotate(-15deg));
+    }
+}
+
+.staff__description {
+    margin-top: 24px;
 }
 
 .staff__name {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .staff__position {
@@ -73,7 +113,7 @@
     padding-right: 26px;
     position: relative;
     text-transform: uppercase;
-    
+
     svg {
         fill: currentColor;
         height: 8px;
@@ -88,11 +128,47 @@
 }
 
 .staff-info__photo {
+    margin-top: 30px;
+    margin-left: 30px;
     margin-bottom: 56px;
-    
+    position: relative;
+
+    &::before {
+        background-image: url('@{images}/logo-sm.svg');
+        background-size: 100%;
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 60px;
+        height: 92px;
+        width: 70px;
+        z-index: 20;
+    }
+
     img {
-        display: block;
-        width: 100%;
+        //display: block;
+        //width: 100%;
+    }
+}
+
+.staff-info__image {
+    .flex(0,0,auto);
+    border-radius: 25px;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    .transform(rotate(15deg));
+
+    img {
+        min-height: 100%;
+        min-width: 100%;
+        max-width: 120%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 10;
+        .transform(translate(-50%, -50%) rotate(-15deg));
     }
 }
 
@@ -110,9 +186,25 @@
     line-height: 1.6;
 }
 
+.staff-info__name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.staff-info__position {
+    margin-bottom: 32px;
+}
+
+.staff-info__grad {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
 .staff-info__contacts {
     background-color: #F8F0FF;
-    display: table;
+    //display: table;
     padding: 24px;
 }
 
@@ -150,10 +242,25 @@
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 32px;
+
+    &.date {
+        color: @color-info;
+        font-weight: 500;
+        width: 150px;
+    }
 }
 
 .staff-about__value {
     display: table-cell;
     padding-top: 10px;
     padding-bottom: 10px;
+
+    &.position {
+        p {margin-bottom: 24px;}
+
+        p:first-child {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+    }
 }

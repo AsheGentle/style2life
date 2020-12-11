@@ -219,8 +219,16 @@ button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
+  outline: none;
 }
+
+a, a:hover, a:focus,
+input, input:hover, input:focus, input:active,
+select, select:hover, select:focus, select:active,
+textarea, textarea:hover, textarea:focus, textarea:active,
+button, button:hover, button:focus, button:active,
+label, label:hover, label:focus, label:active {outline: none;}
+button::-moz-focus-inner, input::-moz-focus-inner, select::-moz-focus-inner {border: none;}
 
 /**
  * Correct the padding in Firefox.
@@ -280,16 +288,6 @@ textarea {
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
 }
 
 /**

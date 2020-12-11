@@ -107,6 +107,7 @@
 
 .header-top__nav-link {
     border-bottom: 1px solid transparent;
+    cursor: pointer;
     display: block;
     padding: 10px 0;
 
@@ -128,6 +129,19 @@
     }
 
     &:hover {color: @color-info;}
+}
+
+.header-phone {
+    .display-flex();
+}
+
+.header-phone__item {
+    font-weight: 700;
+    letter-spacing: 0;
+    
+    &:hover {color: @primary;}
+    
+    & + & {margin-left: 16px;}
 }
 
 .header-middle {
@@ -245,6 +259,14 @@
     position: absolute;
     top: -12px;
     right: 0;
+}
+
+.user-nav__link--phone {
+    display: none;
+    
+    svg {
+        fill: currentColor;
+    }
 }
 
 .user-nav__link--compare {
@@ -620,4 +642,5 @@
 
 main {
     padding-top: 30px;
+    padding-bottom: 30px;
 }
