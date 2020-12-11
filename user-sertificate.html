@@ -72,14 +72,16 @@
                     <ul class="header-top__nav">
                         <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Бесплатная доставка</a></li>
                         <li class="header-top__nav-item active"><a href="" class="header-top__nav-link">Персональная скидка</a></li>
-                        <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Звонок с сайта</a></li>
-                        <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Упаковка</a></li>
-                        <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Подписаться</a></li>
+                        <li class="header-top__nav-item"><a data-modal="#callback" class="header-top__nav-link">Заказать звонок</a></li>
                     </ul>
                     <a href class="header-address">
                         <svg><use href="assets/img/icons-map.svg#id"></use></svg>
                         Адреса магазинов
                     </a>
+                    <div class="header-phone">
+                        <a href="tel:88000000000" class="header-phone__item">8 800 000 00 00</a>
+                        <a href="tel:+79876543210" class="header-phone__item">+7 (987) 654 32 10</a>
+                    </div>
                 </div>
             </div>
             <div class="header-middle">
@@ -138,7 +140,6 @@
                                         <div class="cart__desc">
                                             <div class="cart__title">Nike</div>
                                             <div class="cart__category">Шорты спортивные</div>
-                                            <div class="cart__availy">Нет на складе</div>
                                         </div>
                                         <div class="cart__price price">
                                             <div class="price--old">2 500</div>
@@ -270,9 +271,9 @@
                             <li class="user-menu__item"><a href="" class="user-menu__link">Мои заказы</a></li>
                             <li class="user-menu__item"><a href="" class="user-menu__link">Избранное</a></li>
                             <li class="user-menu__item"><a href="" class="user-menu__link">Мои данные</a></li>
-                            <li class="user-menu__item active"><a href="" class="user-menu__link">Подписки</a></li>
+                            <li class="user-menu__item"><a href="" class="user-menu__link">Подписки</a></li>
                             <li class="user-menu__item"><a href="" class="user-menu__link">Отзывы и вопросы</a></li>
-                            <li class="user-menu__item"><a href="" class="user-menu__link">Мои подарочные сертификаты</a></li>
+                            <li class="user-menu__item active"><a href="" class="user-menu__link">Мои подарочные сертификаты</a></li>
                             <li class="user-menu__item"><a href="" class="user-menu__link">Программа лояльности</a></li>
                             <li class="user-menu__item"><a href="" class="user-menu__link">Моя карта лояльности</a></li>
                             <li class="user-menu__item"><a href="" class="user-menu__link">Оплата частями</a></li>
@@ -282,7 +283,7 @@
                         <h1>Мои подарочные сертификаты</h1>
                         <div class="sertificate-text">Здесь вы можете добавить и активировать ваш подарочный сертификат, чтобы использовать его при оформлении заказа, а также приобрести подарочный сертификат Style2life и отправить его адресату.</div>
                         <div class="btn-line">
-                            <a href="" class="btn btn--secondary btn--small">Добавить сертификат</a>
+                            <a data-modal="#sertificate" class="btn btn--secondary btn--small">Добавить сертификат</a>
                             <a href="" class="btn btn--link">Купить сертификат</a>
                         </div>
                     </div>
@@ -408,10 +409,50 @@
                 </div>
             </div>
         </footer>
-
+        
+        <div class="modal" id="sertificate">
+            <div class="modal__content modal__xs">
+                <div class="modal__close"><svg><use href="assets/img/icons-close.svg#id"></use></svg></div>
+                <div class="modal__body">
+                    <div class="modal__logo"><img src="assets/img/logo.svg"></div>
+                    <div class="modal__title modal__title--border">Добавление нового подарочного сертификата </div>
+                    <form class="validate">
+                        <div class="form-item form-item--margin-s form-item--block">
+                            <div class="form-item__input">
+                                <input type="text" class="inputbox required" placeholder="Номер сертификата" name="sert">
+                            </div>
+                        </div>
+                        <div class="btn-line">
+                            <input type="submit" value="Активировать" class="btn btn--secondary btn--small btn--full">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="sertificate-success">
+            <div class="modal__content modal__xs">
+                <div class="modal__close"><svg><use href="assets/img/icons-close.svg#id"></use></svg></div>
+                <div class="modal__body">
+                    <div class="sertificate-success">Сертификат успешно активирован :)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="sertificate-error">
+            <div class="modal__content modal__xs">
+                <div class="modal__close"><svg><use href="assets/img/icons-close.svg#id"></use></svg></div>
+                <div class="modal__body">
+                    <div class="sertificate-error">Сертификат недействителен! :(</div>
+                </div>
+            </div>
+        </div>
+        
         <script type="text/javascript" src="assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/slick.min.js"></script>
         <script type="text/javascript" src="assets/js/selectize.min.js"></script>
+        <script type="text/javascript" src="assets/js/fancybox.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="assets/js/app.js"></script>
     </body>
 </html>
