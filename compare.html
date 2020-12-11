@@ -72,14 +72,16 @@
                     <ul class="header-top__nav">
                         <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Бесплатная доставка</a></li>
                         <li class="header-top__nav-item active"><a href="" class="header-top__nav-link">Персональная скидка</a></li>
-                        <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Звонок с сайта</a></li>
-                        <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Упаковка</a></li>
-                        <li class="header-top__nav-item"><a href="" class="header-top__nav-link">Подписаться</a></li>
+                        <li class="header-top__nav-item"><a data-modal="#callback" class="header-top__nav-link">Заказать звонок</a></li>
                     </ul>
                     <a href class="header-address">
                         <svg><use href="assets/img/icons-map.svg#id"></use></svg>
                         Адреса магазинов
                     </a>
+                    <div class="header-phone">
+                        <a href="tel:88000000000" class="header-phone__item">8 800 000 00 00</a>
+                        <a href="tel:+79876543210" class="header-phone__item">+7 (987) 654 32 10</a>
+                    </div>
                 </div>
             </div>
             <div class="header-middle">
@@ -138,7 +140,6 @@
                                         <div class="cart__desc">
                                             <div class="cart__title">Nike</div>
                                             <div class="cart__category">Шорты спортивные</div>
-                                            <div class="cart__availy">Нет на складе</div>
                                         </div>
                                         <div class="cart__price price">
                                             <div class="price--old">2 500</div>
@@ -411,116 +412,124 @@
         </main>
 
         <footer class="footer">
-            <section class="footer__section-top">
-                <div class="footer__section--wrap container">
-                    <div class="footer__column">
-                        <div class="footer__title">Помощь</div>
-                        <ul class="footer__links">
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">О нас</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Модный блог</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Как сделать заказ</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Статус заказа по номеру</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Как выбрать размер</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Вопросы и ответы</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Пресс-центр</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Преимущества</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Сертификаты</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Вакансии</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Карта сайта</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Контакты</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__column">
-                        <div class="footer__title">Мы в соцсетях</div>
-                        <ul class="footer__socials">
-                            <li class="footer__social-wrap">
-                                <a href="index.html#" class="footer__social"> <i class="lab la-twitter"></i> </a>
-                            </li>
-                            <li class="footer__social-wrap">
-                                <a href="index.html#" class="footer__social"> <i class="lab la-whatsapp"></i> </a>
-                            </li>
-                            <li class="footer__social-wrap">
-                                <a href="index.html#" class="footer__social"> <i class="lab la-vk"></i> </a>
-                            </li>
-                            <li class="footer__social-wrap">
-                                <a href="index.html#" class="footer__social"> <i class="lab la-telegram"></i> </a>
-                            </li>
-                            <li class="footer__social-wrap">
-                                <a href="index.html#" class="footer__social"> <i class="lab la-odnoklassniki"></i> </a>
-                            </li>
-                            <li class="footer__social-wrap">
-                                <a href="index.html#" class="footer__social"> <i class="lab la-instagram"></i> </a>
-                            </li>
-                            <li class="footer__social-wrap">
-                                <a href="index.html#" class="footer__social"> <i class="lab la-facebook-f"></i> </a>
-                            </li>
-                        </ul>
-                        <div class="footer__title">Напишите нам</div>
-                        <ul class="footer__socials">
-                            <li class="footer__social-wrap">
-                                <a href="index.html#" class="footer__social"> <i class="lab la-whatsapp"></i> </a>
-                            </li>
-                            <li class="footer__social-wrap">
-                                <a href="index.html#" class="footer__social"> <i class="lab la-telegram"></i> </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer__column">
-                        <div class="footer__title">Способы оплаты</div>
-                        <div class="footer__payments">
-                            <a href="index.html#" class="footer__payment"> <img src="assets/img/visa.svg" alt="visa" /> </a> <a href="index.html#" class="footer__payment"> <img src="assets/img/mir.svg" alt="mir" /> </a>
-                            <a href="index.html#" class="footer__payment"> <img src="assets/img/mastercard.svg" alt="mastercard" /> </a>
-                        </div>
-                        <p class="footer__content">
-                            Вы можете оплатить покупки<br />
-                            наличными при получении, либо<br />
-                            выбрать <a href="index.html#">другой способ оплаты</a>.
-                        </p>
-                        <div class="footer__title">Способы доставки</div>
-                        <ul class="footer__links">
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Пункты самовывоза</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Доставка</a></li>
-                            <li class="footer__link-wrap"><a href="index.html#" class="footer__link">Возврат товара</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__column">
-                        <div class="footer__title">Способы доставки</div>
-                        <div class="footer__apps">
-                            <a href="index.html#" class="footer__app"> <img src="assets/img/googleplay.svg" alt="googleplay" /> </a> <a href="index.html#" class="footer__app"> <img src="assets/img/appstore.svg" alt="appstore" /> </a>
-                        </div>
-                        <p class="footer__content">
-                            Вы также можете перейти<br />
-                            на <a href="index.html#">мобильную версию сайта</a>.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section class="footer__section-middle">
+            <div class="footer-top">
                 <div class="container">
-                    <div class="footer__title">Наши друзья и партнеры</div>
-                    <div class="footer__partners">
-                        <a href="index.html#" class="footer__partner">
-                            <img src="assets/img/bonus.png" alt="mailbounus" />
-                        </a>
-                        <a href="index.html#" class="footer__partner">
-                            <img src="assets/img/sovest.png" alt="sovest" />
-                        </a>
-                        <a href="index.html#" class="footer__partner">
-                            <img src="assets/img/revoplus.png" alt="revoplus" />
-                        </a>
-                        <a href="index.html#" class="footer__partner">
-                            <img src="assets/img/halva.png" alt="halva" />
-                        </a>
-                        <a href="index.html#" class="footer__partner">
-                            <img src="assets/img/hcb.png" alt="hcb" />
-                        </a>
-                        <a href="index.html#" class="footer__partner">
-                            <img src="assets/img/nike.png" alt="nike" />
-                        </a>
+                    <div class="footer-column">
+                        <div class="footer-item">
+                            <div class="footer-item__title">Помощь</div>
+                            <div class="footer-item__content">
+                                <ul class="footer__list">
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">О нас</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Модный блог</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Как сделать заказ</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Статус заказа по номеру</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Как выбрать размер</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Вопросы и ответы</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Пресс-центр</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Преимущества</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Сертификаты</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Вакансии</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Карта сайта</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Контакты</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-item">
+                            <div class="footer-item__title">Мы в соцсетях</div>
+                            <div class="footer-item__content">
+                                <div class="social__list social__list--footer">
+                                    <a href="" class="social__link"><svg><use href="assets/img/icons-social.svg#tw"></use></svg></a>
+                                    <a href="" class="social__link"><svg><use href="assets/img/icons-social.svg#wt"></use></svg></a>
+                                    <a href="" class="social__link"><svg><use href="assets/img/icons-social.svg#vk"></use></svg></a>
+                                    <a href="" class="social__link"><svg><use href="assets/img/icons-social.svg#tg"></use></svg></a>
+                                    <a href="" class="social__link"><svg><use href="assets/img/icons-social.svg#ok"></use></svg></a>
+                                    <a href="" class="social__link"><svg><use href="assets/img/icons-social.svg#in"></use></svg></a>
+                                    <a href="" class="social__link"><svg><use href="assets/img/icons-social.svg#fb"></use></svg></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-item">
+                            <div class="footer-item__title">Напишите нам</div>
+                            <div class="footer-item__content">
+                                <div class="social__list social__list--footer">
+                                    <a href="" class="social__link"><svg><use href="assets/img/icons-social.svg#wt"></use></svg></a>
+                                    <a href="" class="social__link"><svg><use href="assets/img/icons-social.svg#tg"></use></svg></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-item">
+                            <div class="footer-item__title">Способы оплаты</div>
+                            <div class="footer-item__content">
+                                <div class="footer__payments">
+                                    <a href="" class="footer__payments-item"><img src="assets/img/visa.svg" alt="visa"></a>
+                                    <a href="" class="footer__payments-item"><img src="assets/img/mir.svg" alt="mir"></a>
+                                    <a href="" class="footer__payments-item"><img src="assets/img/mastercard.svg" alt="mastercard"></a>
+                                </div>
+                                <div class="footer__text">
+                                    Вы можете оплатить покупки<br />
+                                    наличными при получении, либо<br />
+                                    выбрать <a href="">другой способ оплаты</a>.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-item">
+                            <div class="footer-item__title">Способы доставки</div>
+                            <div class="footer-item__content">
+                                <ul class="footer__list">
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Пункты самовывоза</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Доставка</a></li>
+                                    <li class="footer__list-item"><a href="" class="footer__list-link">Возврат товара</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-item">
+                            <div class="footer-item__title">Для мобильных устройств</div>
+                            <div class="footer-item__content">
+                                <div class="footer__apps">
+                                    <a href="" class="footer__apps-item"><img src="assets/img/googleplay.svg" alt="googleplay"></a>
+                                    <a href="" class="footer__apps-item"><img src="assets/img/appstore.svg" alt="appstore"></a>
+                                </div>
+                                <div class="footer__text">
+                                    Вы также можете перейти<br />
+                                    на <a href="">мобильную версию сайта</a>.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="footer-column">
+                        <div class="footer-item">
+                            <div class="footer-item__title">Наши друзья и партнеры</div>
+                            <div class="footer-item__content">
+                                <div class="footer__partners">
+                                    <a href="" class="footer__partners-item"><img src="assets/img/bonus.png" alt="mailbounus"></a>
+                                    <a href="" class="footer__partners-item"><img src="assets/img/sovest.png" alt="sovest"></a>
+                                    <a href="" class="footer__partners-item"><img src="assets/img/revoplus.png" alt="revoplus"></a>
+                                    <a href="" class="footer__partners-item"><img src="assets/img/halva.png" alt="halva"></a>
+                                    <a href="" class="footer__partners-item"><img src="assets/img/hcb.png" alt="hcb"></a>
+                                    <a href="" class="footer__partners-item"><img src="assets/img/nike.png" alt="nike"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Интернет-магазин одежды, обуви и аксессуаров Style2Life 
+                </div>
+            </div>
         </footer>
+        
         <script type="text/javascript" src="assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/slick.min.js"></script>
         <script type="text/javascript" src="assets/js/selectize.min.js"></script>
