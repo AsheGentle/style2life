@@ -430,9 +430,31 @@ $(function(){
             }
         });
     }
-    
-    
+
+
     $(".brands__title").on("click", function(){
         $(this).parents(".brands").toggleClass("open");
+    });
+
+
+    $(".shops__item-name").on("click", function(){
+        $(this).parents(".shops__item").find(".shops__more").toggleClass("show");
+        $(this).parents(".shops__wrap").height($(this).parents(".shops__item").find(".shops__more").outerHeight());
+    });
+    $(".shops__more-back").on("click", function(){
+        $(this).parents(".shops__more").removeClass("show");
+        $(this).parents(".shops__wrap").height('auto');
+    });
+
+
+    $(".shops-nav__show").on("click", function(){
+        $(".shops-nav__item.hide").show();
+        $(this).hide();
+        $(".shops-nav__hide").show();
+    });
+    $(".shops-nav__hide").on("click", function(){
+        $(".shops-nav__item.hide").hide();
+        $(this).hide();
+        $(".shops-nav__show").show();
     });
 });

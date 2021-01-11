@@ -1,0 +1,249 @@
+.section-shops {
+    padding-top: 32px;
+    padding-bottom: 48px;
+
+    h1 span {color: @primary;}
+}
+
+.shops-nav {
+    .display-flex();
+    .cross-axis-start();
+    .row-wrap();
+    margin: 0 -8px 12px;
+    
+    .btn {margin: 0 8px;}
+}
+
+.shops-nav__item {
+    border: 1px solid @dark;
+    font-size: 16px;
+    margin: 0 8px 12px;
+    padding: 4px 15px;
+
+    &.active {
+        background-color: @dark;
+        color: #fff;
+    }
+    
+    &.hide {
+        display: none;
+    }
+
+    &:hover {
+        background-color: @primary;
+        border-color: @primary;
+        color: #fff;
+    }
+}
+
+.shops-nav__hide {
+    display: none;
+}
+
+.shops {
+    .display-flex();
+    border: 1px solid #DCDCDC;
+    height: 700px;
+}
+
+.shops__map {
+    .flex(1,1,auto);
+    overflow: hidden;
+}
+
+.shops__wrap {
+    .flex(0,0,auto);
+    overflow: hidden;
+    position: relative;
+    width: 390px;
+}
+
+.shops__scroll {
+    height: 100%;
+    overflow: auto;
+    padding: 30px 22px;
+}
+
+.shops__search {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.shops__search-input {
+    border: 1px solid #CECECE;
+    border-radius: 4px;
+    padding: 12px 16px 12px 16px;
+    width: 100%;
+}
+
+.shops__search-btn {
+    background-color: transparent;
+    background-image: url('@{images}/icon-search-grey.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    top: 0;
+    right: 0;
+}
+
+.shops__sort {
+    .display-flex();
+    .row-wrap();
+    .main-axis-between();
+    .cross-axis-center();
+    margin-bottom: 30px;
+
+    .radio {
+        margin-bottom: 10px;
+        padding-left: 24px;
+        
+        &:not(:last-child) {margin-right: 20px;}
+
+        .radio__label::before {
+            height: 16px;
+            width: 16px;
+        }
+
+        input:checked + .radio__label {
+            font-weight: 500;
+        }
+
+        input:checked + .radio__label::before {
+            background-color: @primary;
+            border: 1px solid @primary;
+            box-shadow: 0 0 0 3px #fff inset;
+        }
+    }
+}
+
+.shops__item {
+    &:not(:last-child) {
+        border-bottom: 1px solid #D7D7D7;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+}
+
+.shops__item-name {
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    
+    &:hover {color: @primary;}
+}
+
+.shops__item-metro {
+    margin-bottom: 2px;
+    padding-left: 20px;
+    position: relative;
+    
+    span {
+        display: block;
+        border-radius: 50%;
+        height: 8px;
+        width: 8px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -4px;
+    }
+}
+
+.shops__item-time {
+    margin-top: 8px;
+}
+
+.shops__more {
+    background-color: #fff;
+    display: none;
+    padding: 30px 22px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    
+    &.show {display: block;}
+    
+    .btn {margin-left: 40px;}
+}
+
+.shops__more-back {
+    background-image: url('@{images}/arrow-left-primary.svg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: @primary;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    padding-left: 26px;
+    text-transform: uppercase;
+}
+
+.shops__more-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.shops__more-address {
+    background-image: url('@{images}/icon-address.svg');
+    background-position: left 4px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    margin-bottom: 16px;
+    padding-left: 40px;
+    
+    span {
+        color: @light;
+        display: block;
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+}
+
+.shops__more-phone {
+    background-image: url('@{images}/icon-phone.svg');
+    background-position: left 4px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    margin-bottom: 16px;
+    padding-left: 40px;
+    
+    span {
+        color: @light;
+        display: block;
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+}
+
+.shops__more-time {
+    background-image: url('@{images}/icon-time.svg');
+    background-position: left 4px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    margin-bottom: 28px;
+    padding-left: 40px;
+    
+    span {
+        color: @light;
+        display: block;
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+    
+    .partner {
+        color: @primary;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
