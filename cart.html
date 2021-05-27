@@ -382,7 +382,7 @@
                                 <span>К оплате</span>
                                 <span class="value">46 052 ₽</span>
                             </div>
-                            <a href="" class="btn btn--full">Оформить заказ</a>
+                            <a data-modal="#order-confirm" class="btn btn--full">Оформить заказ</a>
                         </div>
                     </div>
                 </div>
@@ -524,6 +524,21 @@
                 </div>
             </div>
         </footer>
+        
+        <div class="modal" id="order-confirm">
+            <div class="modal__content">
+                <div class="modal__close"><svg><use href="assets/img/icons-close.svg#id"></use></svg></div>
+                <div class="modal__body">
+                    <div class="modal__logo"><img src="assets/img/logo.svg"></div>
+                    <div class="modal__title modal__title--border">Заказ оформлен</div>
+                    <p><strong>Благодарим, что выбрали нас!</strong></p>
+                    <p>Мы свяжемся с вами в ближайшее время и поможем вам подобрать наиболее оптимальный способ доставки.</p>
+                    <p>Вы можете самостоятельно отслеживать статус вашего заказа в <a href="">мои заказы</a>.</p>
+                    <p>Номер вашего заказа: <strong>#10045</strong></p>
+                    <a class="btn btn--secondary btn--small" href="">Продолжить покупки</a>
+                </div>
+            </div>
+        </div>
 
         <script type="text/javascript" src="assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/slick.min.js"></script>
