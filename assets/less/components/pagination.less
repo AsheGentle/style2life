@@ -10,14 +10,14 @@
     .cross-axis-center();
     height: 28px;
     width: 47px;
-    
+
     svg {
         fill: #E0E0E0;
         height: 16px;
         width: 47px;
         .transition();
     }
-    
+
     &:hover {
         svg {fill: @primary;}
     }
@@ -39,18 +39,67 @@
     height: 28px;
     width: 28px;
     text-align: center;
-    
+
     &.active {
         background-color: @primary;
         color: #fff;
-        
+
         &:hover {color: #fff;}
     }
-    
+
     &:hover {color: @primary;}
 }
 
 .product__tabs-content[data-tab='product-review'] .pagination-mobile {
     display: none;
     text-align: center;
+}
+
+.pagination-section {
+    .pagination {padding-top: 32px;}
+}
+
+.pagination-more {
+    text-align: center;
+}
+
+.btn-more {
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 54px;
+    position: relative;
+    text-transform: uppercase;
+
+    svg {
+        fill: #4F4F4F;
+        height: 24px;
+        width: 24px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -12px;
+        .transition();
+    }
+
+    span {
+        border-bottom: 1px solid currentColor;
+        color: #4F4F4F;
+        font-weight: 700;
+        display: inline-block;
+        padding: 4px 0;
+        .transition();
+    }
+
+    &:hover {
+        span {
+            border-color: transparent;
+            color: @primary;
+        }
+        svg {fill: @primary;}
+    }
+}
+
+.catalog-wrap + .pagination-section {
+    padding-top: 32px;
+    margin-left: 326px;
 }
