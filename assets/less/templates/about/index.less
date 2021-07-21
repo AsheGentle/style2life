@@ -1,0 +1,156 @@
+.section-about {
+    font-size: 16px;
+    padding-top: 24px;
+
+    h1 {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 998px;
+    }
+}
+
+.about-shadow {
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.08);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 998px;
+    padding: 44px 110px;
+}
+
+.about-logo {
+    .display-flex();
+    .cross-axis-center();
+    margin-bottom: 40px;
+}
+
+.about-logo__image {
+    .flex(0,0,auto);
+    margin-right: 40px;
+    width: 147px;
+}
+
+.about-text {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+    max-width: 740px;
+}
+
+.about-mission {
+    margin-left: 205px;
+    margin-bottom: 30px;
+    max-width: 800px;
+
+    h2 {
+        margin: 0 0 40px;
+        text-align: center;
+    }
+}
+
+.about-icons {
+    .display-flex();
+    .row-wrap();
+    margin-left: -32px;
+    margin-right: -32px;
+}
+
+.about-icons__item {
+    margin-bottom: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 50%;
+}
+
+.about-icons__image {
+    margin-bottom: 20px;
+}
+
+.about-icons__title {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.about-target {
+    margin-left: 205px;
+    margin-bottom: 70px;
+    max-width: 860px;
+
+    h2 {
+        margin-left: 170px;
+        margin-bottom: 40px;
+    }
+}
+
+.about-target__item {
+    .display-flex();
+    .cross-axis-center();
+    & + & {margin-top: 40px;}
+
+    &:last-child {
+        .about-target__image::after {display: none;}
+    }
+}
+
+.about-target__image {
+    .flex(0,0,auto);
+    margin-right: 40px;
+    position: relative;
+
+    &::after {
+        border-left: 4px dashed #F2F2F2;
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        height: 100px;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+}
+
+.about-why {
+    margin: 70px auto;
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        margin-top: 40px;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+
+        li {
+            padding-left: 55px;
+            position: relative;
+
+            &:not(:last-child) {margin-bottom: 15px;}
+
+            &::before {
+                background-color: @color-info;
+                content: '';
+                height: 3px;
+                width: 25px;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -2px;
+            }
+        }
+    }
+}
+
+.about-pluses {
+    margin-left: 205px;
+    max-width: 920px;
+    
+    h2 {margin-bottom: 40px;}
+}
