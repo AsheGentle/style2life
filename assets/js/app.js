@@ -22,6 +22,12 @@ $(function(){
     });
 
 
+    //mobile phone
+    $(".user-nav__phone-toggle").on("click", function(){
+        $("body").toggleClass("open-phone");
+    });
+
+
     $(".header-location__selected").on("click", function(){
         $("body").toggleClass("open-location");
     });
@@ -65,6 +71,14 @@ $(function(){
             }
         }
 
+        if ($("body").hasClass("open-phone")) {
+            var div = $(".user-nav__link--phone");
+            if (!div.is(e.target)
+                    && div.has(e.target).length === 0) {
+                $("body").removeClass("open-phone");
+            }
+        }
+
         if ($(".select-size").hasClass("active")) {
             var div = $(".select-size");
             if (!div.is(e.target)
@@ -80,7 +94,6 @@ $(function(){
                 $(".cart").removeClass("open");
             }
         }
-
 
         if ($(".add-code__link").hasClass("active")) {
             var div = $(".add-code");

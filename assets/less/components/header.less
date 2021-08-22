@@ -138,9 +138,9 @@
 .header-phone__item {
     font-weight: 700;
     letter-spacing: 0;
-    
+
     &:hover {color: @primary;}
-    
+
     & + & {margin-left: 16px;}
 }
 
@@ -221,6 +221,7 @@
 .user-nav {
     .display-flex();
     .cross-axis-center();
+    position: relative;
 }
 
 .user-nav__link {
@@ -231,6 +232,7 @@
     &:not(:first-child) {margin-left: 32px;}
 
     svg {
+        display: block;
         height: 24px;
         width: 24px;
     }
@@ -263,9 +265,24 @@
 
 .user-nav__link--phone {
     display: none;
-    
+    position: static;
+
     svg {
         fill: currentColor;
+    }
+
+    &::after {
+        background-color: #fff;
+        border-radius: 4px;
+        content: '';
+        display: none;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        margin-left: -3px;
+        top: ~'calc(100% + 7px)';
+        z-index: 500;
+        .transform(rotate(45deg));
     }
 }
 
@@ -295,6 +312,41 @@
     svg {
         fill: currentColor;
     }
+}
+
+.user-nav__phone-list {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    color: @dark;
+    cursor: auto;
+    padding: 28px 36px 20px 24px;
+    text-align: left;
+    white-space: nowrap;
+    position: absolute;
+    top: ~'calc(100% + 10px)';
+    right: 0;
+    z-index: 200;
+}
+
+.open-phone {
+    .user-nav__link--phone {
+        svg {fill: #fff;}
+        &::after {display: block;}
+    }
+    
+    .user-nav__phone-list {display: block;}
+}
+
+.user-nav__phone-item {
+    &:not(:last-child) {margin-bottom: 12px;}
+
+    a {font-weight: 700;}
+}
+
+.user-nav__phone-title {
+    font-size: 12px;    
 }
 
 
@@ -460,7 +512,7 @@
     }
 
     .header-mobile {left: 0;}
-    
+
     .mobile-nav .mobile-btn__menu {
         opacity: 1;
         pointer-events: auto;
