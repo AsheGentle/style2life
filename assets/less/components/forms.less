@@ -147,9 +147,9 @@
     }
 
     span {
-        line-height: 46px; 
+        line-height: 46px;
     }
-    
+
     span + svg {
         margin-right: 0;
         margin-left: 8px;
@@ -235,7 +235,7 @@
     margin-bottom: 16px;
 }
 
-form-item--margin-none {
+.form-item--margin-none {
     margin-bottom: 0;
 }
 
@@ -306,7 +306,7 @@ form-item--margin-none {
         padding-left: 0;
         padding-right: 0;
     }
-    
+
     &.error {
         border-color: #DE0700;
         box-shadow: 0px 0px 5px rgba(222, 7, 0, 0.4);
@@ -332,15 +332,58 @@ textarea.inputbox {
 }
 
 .inputbox + .form-item__row {
-    margin-top: 16px;    
+    margin-top: 16px;
+}
+.form {
+    &__checkbox {
+        &-input {
+            display: none;
+        }
+
+        &-label {
+            width: 24px;
+            height: 24px;
+            border: 2px solid @secondary;
+            margin-right: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    }
+}
+
+.form__checkbox-input:checked~.form__checkbox-label::before {
+    content: '';
+    background-image: url('../img/icon-check.svg');
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 
-.form-item__row {
-    .display-flex();
-    .main-axis-between();
+.form-item {
+    &__row {
+        .display-flex();
+        .main-axis-between();
 
-    .inputbox + .inputbox {margin-left: 16px;}
+        .inputbox + .inputbox {margin-left: 16px;}
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.form-group {
+    margin-top: 20px;
+
+    &-name {
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
 }
 
 .radio {
