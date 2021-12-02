@@ -757,7 +757,7 @@ body.fancybox-iosfix {
   z-index: 99997;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.25s, visibility 0s linear 0.25s;
+  transition: opacity .25s, visibility 0s linear .25s;
   box-sizing: border-box;
 }
 .fancybox-show-infobar .fancybox-infobar,
@@ -765,7 +765,7 @@ body.fancybox-iosfix {
 .fancybox-show-caption .fancybox-caption-wrap {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.25s, visibility 0s;
+  transition: opacity .25s, visibility 0s;
 }
 .fancybox-infobar {
   top: 0;
@@ -940,8 +940,8 @@ body.fancybox-iosfix {
   padding: 0;
   width: 80%;
   height: 80%;
-  max-width: calc(100% - 100px);
-  max-height: calc(100% - 88px);
+  max-width: calc(0%);
+  max-height: calc(12%);
   overflow: visible;
   background: #fff;
 }
@@ -980,7 +980,7 @@ body.fancybox-iosfix {
   border: 0;
   border-radius: 0;
   background: rgba(30, 30, 30, 0.6);
-  transition: color 0.3s ease;
+  transition: color .3s ease;
   cursor: pointer;
   outline: none;
 }
@@ -1300,7 +1300,7 @@ p.fancybox-share__links {
   -ms-user-select: none;
   user-select: none;
   color: #fff;
-  transition: all 0.2s;
+  transition: all .2s;
 }
 .fancybox-share__button:hover {
   text-decoration: none;
@@ -1407,8 +1407,8 @@ p.fancybox-share__links {
   margin: 2px;
   width: 100px;
   height: 75px;
-  max-width: calc(50% - 4px);
-  max-height: calc(100% - 8px);
+  max-width: calc(46%);
+  max-height: calc(92%);
   position: relative;
   cursor: pointer;
   outline: none;
@@ -1455,7 +1455,7 @@ li.fancybox-thumbs-loading {
     right: 110px;
   }
   .fancybox-thumbs > ul > li {
-    max-width: calc(100% - 10px);
+    max-width: calc(90%);
   }
 }
 .section-breadcrumb {
@@ -1531,7 +1531,7 @@ span.breadcrumb__link:hover {
   border-radius: 50%;
   border: 1px solid currentColor;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all .3s;
   font-size: 20px;
 }
 .sharing__button:hover {
@@ -3728,6 +3728,9 @@ textarea.inputbox {
   background-color: #005FF9;
   border-color: #005FF9;
 }
+a[data-modal] {
+  cursor: pointer;
+}
 .pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4520,18 +4523,18 @@ textarea.inputbox {
             display: block;
             padding: 10px;
         }
-
+    
         & > a {
             margin-left: -10px;
-            margin-right: -10px;
+            margin-right: -10px;        
         }
-
+    
         &.active {
             & > a {background-color: #F5F5F5;}
-
+    
             .filter-block__sub {display: block;}
         }
-
+    
         &.has-child > a {
             background-image: url('@{images}/arrow-down-grey.svg');
             background-position: right 10px center;
@@ -5585,7 +5588,11 @@ textarea.inputbox {
 }
 .order-checkout {
   background-color: #F6F6F6;
-  max-width: 900px;
+}
+.order-checkout--provider {
+  background-color: transparent;
+  border: 1px solid #DCDCDC;
+  margin-top: 32px;
 }
 .order-checkout__title {
   font-size: 24px;
@@ -5606,14 +5613,39 @@ textarea.inputbox {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 50%;
 }
 .order-checkout__item:first-child {
   border-right: 1px solid #C4C4C4;
   padding-right: 40px;
+  width: 60%;
 }
 .order-checkout__item:last-child {
   padding-left: 40px;
+  width: 40%;
+}
+.order-checkout__info {
+  margin-bottom: 24px;
+  padding-left: 22px;
+  position: relative;
+}
+.order-checkout__info::before {
+  background-color: #404040;
+  border-radius: 50%;
+  color: #fff;
+  content: '?';
+  font-size: 11px;
+  font-weight: 700;
+  height: 14px;
+  line-height: 15px;
+  width: 14px;
+  text-align: center;
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+.order-checkout__info a {
+  color: #4C89D3;
+  text-decoration: underline;
 }
 .order-checkout__promocode {
   margin-bottom: 32px;
@@ -5632,6 +5664,10 @@ textarea.inputbox {
 }
 .order-checkout__loyal {
   margin-bottom: 32px;
+}
+.order-checkout__loyal a {
+  color: #4C89D3;
+  text-decoration: underline;
 }
 .order-checkout__loyal-title {
   font-weight: 700;
@@ -5658,24 +5694,51 @@ textarea.inputbox {
   margin-bottom: 16px;
 }
 .order-checkout__summ {
-  border-bottom: 1px solid #C4C4C4;
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-}
-.order-checkout__summ-total {
-  font-size: 16px;
-  font-weight: 700;
   margin-bottom: 24px;
 }
+.order-checkout__summ-total {
+  border-bottom: 1px solid #C4C4C4;
+  padding-bottom: 8px;
+}
 .order-checkout__summ-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.order-checkout__summ-item:first-child {
+  font-size: 16px;
+  font-weight: 700;
+}
+.order-checkout__summ-item:not(:last-child) {
   margin-bottom: 16px;
+}
+.order-checkout__summ-economy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 24px;
 }
 .order-checkout__summ-name {
   display: inline-block;
   margin-right: 36px;
   width: 168px;
 }
+.order-checkout__summ-value {
+  white-space: nowrap;
+}
 .order-checkout__total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 8px;
@@ -8641,22 +8704,23 @@ textarea.add-code__textarea {
     margin-right: -16px;
     padding: 16px 16px 24px;
   }
-  .order-checkout__item {
-    width: 100%;
-  }
   .order-checkout__item:first-child {
     border-bottom: 1px solid #C4C4C4;
     border-right: none;
     margin-bottom: 24px;
     padding-bottom: 16px;
     padding-right: 0;
+    width: 100%;
   }
   .order-checkout__item:last-child {
     padding-left: 0;
+    width: 100%;
   }
   .order-checkout__summ {
-    border-bottom: none;
     margin-bottom: 12px;
+  }
+  .order-checkout__summ-total {
+    border-bottom: none;
     padding-bottom: 0;
   }
   .order-checkout__total-delivery {
@@ -8670,6 +8734,13 @@ textarea.add-code__textarea {
     margin-left: -16px;
     margin-right: -16px;
     padding: 24px 16px;
+  }
+  .order-checkout--provider {
+    border: none;
+  }
+  .order-checkout--provider .order-checkout__wrap {
+    background-color: transparent;
+    padding-top: 0;
   }
   .sorting-row {
     background-color: #FAFAFA;
@@ -9736,3 +9807,4 @@ textarea.add-code__textarea {
     display: none;
   }
 }
+/*# sourceMappingURL=main.css.map */

@@ -9,7 +9,13 @@
 
 .order-checkout {
     background-color: #F6F6F6;
-    max-width: 900px;
+    //max-width: 900px;
+}
+
+.order-checkout--provider {
+    background-color: transparent;
+    border: 1px solid #DCDCDC;
+    margin-top: 32px;
 }
 
 .order-checkout__title {
@@ -26,15 +32,43 @@
 .order-checkout__item {
     .display-flex();
     .column();
-    width: 50%;
 
     &:first-child {
         border-right: 1px solid #C4C4C4;
         padding-right: 40px;
+        width: 60%;
     }
 
     &:last-child {
         padding-left: 40px;
+        width: 40%;
+    }
+}
+
+.order-checkout__info {
+    margin-bottom: 24px;
+    padding-left: 22px;
+    position: relative;
+
+    &::before {
+        background-color: @dark;
+        border-radius: 50%;
+        color: #fff;
+        content: '?';
+        font-size: 11px;
+        font-weight: 700;
+        height: 14px;
+        line-height: 15px;
+        width: 14px;
+        text-align: center;
+        position: absolute;
+        top: 4px;
+        left: 0;
+    }
+
+    a {
+        color: @secondary;
+        text-decoration: underline;
     }
 }
 
@@ -55,6 +89,11 @@
 
 .order-checkout__loyal {
     margin-bottom: 32px;
+
+    a {
+        color: @secondary;
+        text-decoration: underline;
+    }
 }
 
 .order-checkout__loyal-title {
@@ -88,19 +127,35 @@
 }
 
 .order-checkout__summ {
-    border-bottom: 1px solid #C4C4C4;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-}
-
-.order-checkout__summ-total {
-    font-size: 16px;
-    font-weight: 700;
     margin-bottom: 24px;
 }
 
+.order-checkout__summ-result {
+}
+
+.order-checkout__summ-total {
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: 8px;
+}
+
 .order-checkout__summ-item {
-    margin-bottom: 16px;
+    .display-flex();
+    .main-axis-between();
+
+    &:first-child {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+
+.order-checkout__summ-economy {
+    .display-flex();
+    .main-axis-between();
+    margin-top: 24px;
 }
 
 .order-checkout__summ-name {
@@ -109,9 +164,13 @@
     width: 168px;
 }
 
-.order-checkout__summ-value {}
+.order-checkout__summ-value {
+    white-space: nowrap;
+}
 
 .order-checkout__total {
+    .display-flex();
+    .main-axis-between();
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 8px;
@@ -156,7 +215,7 @@
     .cross-axis-center();
     background-color: #EEEEEE;
     padding: 32px;
-    
+
     a {color: @secondary;}
 }
 
