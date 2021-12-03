@@ -182,14 +182,24 @@
 }
 
 .order-checkout__discount {
-    background-image: url('@{images}/img-cart.svg');
-    background-position: left center;
-    background-repeat: no-repeat;
     line-height: 1.4;
     margin-top: auto;
     padding-left: 72px;
+    position: relative;
 
     a {color: @secondary;}
+
+    &::before {
+        background-image: url('@{images}/img-cart.svg');
+        background-size: 100%;
+        content: '';
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        .transform(translateY(-50%));
+    }
 }
 
 .order-checkout__discount-increase {

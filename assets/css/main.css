@@ -5747,15 +5747,26 @@ a[data-modal] {
   color: #4C89D3;
 }
 .order-checkout__discount {
-  background-image: url('../img/img-cart.svg');
-  background-position: left center;
-  background-repeat: no-repeat;
   line-height: 1.4;
   margin-top: auto;
   padding-left: 72px;
+  position: relative;
 }
 .order-checkout__discount a {
   color: #4C89D3;
+}
+.order-checkout__discount::before {
+  background-image: url('../img/img-cart.svg');
+  background-size: 100%;
+  content: '';
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .order-checkout__discount-increase {
   margin-bottom: 4px;
@@ -8727,8 +8738,11 @@ textarea.add-code__textarea {
     margin-bottom: 12px;
   }
   .order-checkout__discount {
-    background-size: 40px;
     padding-left: 50px;
+  }
+  .order-checkout__discount::before {
+    height: 40px;
+    width: 40px;
   }
   .order-checkout__submit {
     margin-left: -16px;
