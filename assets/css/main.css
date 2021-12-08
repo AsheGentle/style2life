@@ -2747,6 +2747,9 @@ main {
 .btn--fix-s {
   width: 104px;
 }
+.btn--fix-m {
+  width: 280px;
+}
 .btn--full {
   width: 100%;
 }
@@ -5745,6 +5748,10 @@ a[data-modal] {
 }
 .order-checkout__total-delivery a {
   color: #4C89D3;
+}
+.order-checkout__button {
+  margin-top: 32px;
+  margin-bottom: 48px;
 }
 .order-checkout__discount {
   line-height: 1.4;
